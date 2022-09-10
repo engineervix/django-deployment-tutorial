@@ -44,9 +44,7 @@ def pip_compile(c, base=False, dev=False, prod=False):
             pty=True,
         )
     else:
-        print(
-            "please specifiy which set of requirements you wanna generate, as follows:\n"
-        )
+        print("please specifiy which set of requirements you wanna generate, as follows:\n")
         c.run("invoke pip-compile --help", pty=True)
 
 
@@ -119,9 +117,7 @@ def execute_bump_hack(c):
         # push to origin
         c.run("git push --follow-tags origin master", pty=True)
     else:
-        print(
-            f"{Fore.RED}Something went horribly wrong, please figure it out yourself{Fore.RESET}"
-        )
+        print(f"{Fore.RED}Something went horribly wrong, please figure it out yourself{Fore.RESET}")
         print(f"{Fore.RED}Bump failed!{Fore.RESET}")
 
     # clean up
@@ -181,9 +177,7 @@ def bump(c):
     if unstaged_str not in check.stdout or uncommitted_str not in check.stdout:
         execute_bump_hack(c)
     else:
-        print(
-            f"{Fore.RED}Sorry mate, please ensure there are no pending git operations{Fore.RESET}"
-        )
+        print(f"{Fore.RED}Sorry mate, please ensure there are no pending git operations{Fore.RESET}")
 
 
 @task

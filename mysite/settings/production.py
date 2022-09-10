@@ -52,9 +52,7 @@ SESSION_COOKIE_SAMESITE = "None"
 # https://docs.djangoproject.com/en/dev/ref/settings/#secure-hsts-preload
 # SECURE_HSTS_PRELOAD = env.bool("DJANGO_SECURE_HSTS_PRELOAD", default=True)  # noqa F405
 # https://docs.djangoproject.com/en/dev/ref/middleware/#x-content-type-options-nosniff
-SECURE_CONTENT_TYPE_NOSNIFF = env.bool(  # noqa F405
-    "DJANGO_SECURE_CONTENT_TYPE_NOSNIFF", default=True
-)  # noqa F405
+SECURE_CONTENT_TYPE_NOSNIFF = env.bool("DJANGO_SECURE_CONTENT_TYPE_NOSNIFF", default=True)  # noqa F405  # noqa F405
 
 # ==============================================================================
 # incorporationg Backblaze B2 Cloud Storage
@@ -82,19 +80,14 @@ AWS_QUERYSTRING_AUTH = False
 # DO NOT change these unless you know what you're doing.
 _AWS_EXPIRY = 60 * 60 * 24 * 7
 # https://django-storages.readthedocs.io/en/latest/backends/amazon-S3.html#settings
-AWS_S3_OBJECT_PARAMETERS = {
-    "CacheControl": f"max-age={_AWS_EXPIRY}, s-maxage={_AWS_EXPIRY}, must-revalidate"
-}
+AWS_S3_OBJECT_PARAMETERS = {"CacheControl": f"max-age={_AWS_EXPIRY}, s-maxage={_AWS_EXPIRY}, must-revalidate"}
 # https://django-storages.readthedocs.io/en/latest/backends/amazon-S3.html#settings
 AWS_S3_REGION_NAME = env("AWS_S3_REGION_NAME", default=None)  # noqa: F405
 # https://django-storages.readthedocs.io/en/latest/backends/amazon-S3.html#cloudfront
 AWS_S3_CUSTOM_DOMAIN = env("AWS_S3_CUSTOM_DOMAIN", default=None)  # noqa: F405
 # https://django-storages.readthedocs.io/en/latest/backends/amazon-S3.html#settings
 AWS_S3_ENDPOINT_URL = env("AWS_S3_ENDPOINT_URL")  # noqa: F405
-aws_s3_domain = (
-    AWS_S3_CUSTOM_DOMAIN
-    or f"{AWS_STORAGE_BUCKET_NAME}.s3.{AWS_S3_REGION_NAME}.backblaze.com"
-)
+aws_s3_domain = AWS_S3_CUSTOM_DOMAIN or f"{AWS_STORAGE_BUCKET_NAME}.s3.{AWS_S3_REGION_NAME}.backblaze.com"
 
 # STATIC
 # ------------------------
@@ -119,20 +112,14 @@ EMAIL_BACKEND = "anymail.backends.mailgun.EmailBackend"
 ANYMAIL = {
     "MAILGUN_API_KEY": env("MAILGUN_API_KEY"),  # noqa F405
     "MAILGUN_SENDER_DOMAIN": env("MAILGUN_DOMAIN"),  # noqa F405
-    "MAILGUN_API_URL": env(  # noqa F405
-        "MAILGUN_API_URL", default="https://api.mailgun.net/v3"
-    ),
+    "MAILGUN_API_URL": env("MAILGUN_API_URL", default="https://api.mailgun.net/v3"),  # noqa F405
 }
 
 if len(getaddresses([env("EMAIL_RECIPIENTS")])) == 1:  # noqa F405
-    LIST_OF_EMAIL_RECIPIENTS.append(  # noqa F405
-        formataddr(getaddresses([env("EMAIL_RECIPIENTS")])[0])  # noqa F405
-    )
+    LIST_OF_EMAIL_RECIPIENTS.append(formataddr(getaddresses([env("EMAIL_RECIPIENTS")])[0]))  # noqa F405  # noqa F405
 else:
     recipients = getaddresses([env("EMAIL_RECIPIENTS")])  # noqa F405
-    LIST_OF_EMAIL_RECIPIENTS += list(  # noqa F405
-        map(lambda recipient: formataddr(recipient), recipients)
-    )
+    LIST_OF_EMAIL_RECIPIENTS += list(map(lambda recipient: formataddr(recipient), recipients))  # noqa F405
 
 email_address = getaddresses([env("DEFAULT_FROM_EMAIL")])[0]  # noqa F405
 DEFAULT_FROM_EMAIL = formataddr(email_address)
@@ -154,12 +141,7 @@ EMAIL_SUBJECT_PREFIX = env(  # noqa F405
 LOGGING = {
     "version": 1,
     "disable_existing_loggers": True,
-    "formatters": {
-        "verbose": {
-            "format": "%(levelname)s %(asctime)s %(module)s "
-            "%(process)d %(thread)d %(message)s"
-        }
-    },
+    "formatters": {"verbose": {"format": "%(levelname)s %(asctime)s %(module)s " "%(process)d %(thread)d %(message)s"}},
     "handlers": {
         "console": {
             "level": "DEBUG",
