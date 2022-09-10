@@ -1,0 +1,12 @@
+# PRECAUTION: avoid production dependencies that aren't in development
+
+-c base.txt
+-r base.txt
+
+gunicorn
+sentry-sdk
+django-storages[boto3]
+django-anymail[mailgun]
+redis
+django-redis
+hiredis

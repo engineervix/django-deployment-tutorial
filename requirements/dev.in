@@ -1,0 +1,28 @@
+-c base.txt
+-r base.txt
+
+# Dev
+black
+bpython
+commitizen
+django-debug-toolbar
+flake8
+invoke
+isort[requirements_deprecated_finder]
+pip-tools
+powerline-status
+pre-commit
+pycodestyle
+Werkzeug
+
+# Testing
+factory-boy
+pytest-cov
+pytest-django
+pytest-dotenv
+pytest-factoryboy
+pytest-forked
+pytest-logger
+pytest-mock
+pytest-sugar
+pytest-xdist

@@ -1,0 +1,11 @@
+# Core
+django[argon2,bcrypt]
+psycopg2
+
+# Django packages
+django-environ
+django-extensions
+django-model-utils
+
+# Other packages
+whitenoise
