@@ -48,7 +48,7 @@ def pip_compile(c, base=False, dev=False, prod=False):
         c.run("invoke pip-compile --help", pty=True)
 
 
-def execute_bump_hack(c):
+def execute_bump_hack(c, branch):
     """A little hack that combines commitizen-tools and standard-version
 
     commitizen-tools understands Python stuff, but I don't like the
@@ -70,7 +70,7 @@ def execute_bump_hack(c):
     1. cz bump --files-only
     2. git add pyproject.toml and other_files specified in pyproject.toml
     3. standard-version --commit-all --release-as <result from cz if not none>
-    4. git push --follow-tags origin master
+    4. git push --follow-tags origin [branch]
 
     # TODO: add additional options here, which can passed to either cz or standard version
     """
@@ -115,7 +115,7 @@ def execute_bump_hack(c):
             pty=True,
         )
         # push to origin
-        c.run("git push --follow-tags origin master", pty=True)
+        c.run(f"git push --follow-tags origin {branch}", pty=True)
     else:
         print(f"{Fore.RED}Something went horribly wrong, please figure it out yourself{Fore.RESET}")
         print(f"{Fore.RED}Bump failed!{Fore.RESET}")
@@ -161,8 +161,8 @@ def clean_test(c):
     c.run("rm -fr .pytest_cache", pty=True)
 
 
-@task
-def bump(c):
+@task(help={"branch": "The branch against which you wanna bump"})
+def bump(c, branch):
     """Use Commitizen Tools & standard-version to bump version and generate changelog
 
     Run this task when you want to prepare a release.
