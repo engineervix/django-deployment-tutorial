@@ -8,4 +8,5 @@ django-extensions
 django-model-utils
 
 # Other packages
+bpython
 whitenoise

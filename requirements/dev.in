@@ -3,7 +3,6 @@
 
 # Dev
 black
-bpython
 commitizen
 django-debug-toolbar
 flake8
