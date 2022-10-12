@@ -76,7 +76,7 @@ def execute_bump_hack(c, branch):
     # TODO: add additional options here, which can passed to either cz or standard version
     """
     print(f"{Fore.MAGENTA}Attempting to bump using commitizen-tools ...{Fore.RESET}")
-    c.run("cz bump --files-only > .bump_result.txt", pty=True)
+    c.run("cz bump --only > .bump_result.txt", pty=True)
     str_of_interest = "increment detected: "
     result = ""
     with open(".bump_result.txt", "r") as br:
