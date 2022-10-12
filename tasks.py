@@ -112,7 +112,7 @@ def execute_bump_hack(c, branch):
         )
         previous_tag = get_current_tag.stdout.rstrip()
         c.run(
-            f'npm run release -- --commit-all --release-as {release_type} --releaseCommitMessageFormat "bump: ✈️ {previous_tag} → v{{{{currentTag}}}}"',
+            f'standard-version --commit-all --release-as {release_type} --releaseCommitMessageFormat "bump: ✈️ {previous_tag} → v{{{{currentTag}}}}"',
             pty=True,
         )
         # push to origin
