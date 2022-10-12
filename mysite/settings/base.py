@@ -42,6 +42,7 @@ ALLOWED_HOSTS = env("ALLOWED_HOSTS")
 # Application definition
 
 LOCAL_APPS = [
+    "mysite.core",
     "mysite.users",
 ]
 
@@ -52,10 +53,19 @@ DJANGO_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    "django.contrib.sitemaps",
+    "django.contrib.sites",
+    "django.contrib.humanize",
+    "django.forms",
 ]
 
 THIRD_PARTY_APPS = [
+    "ckeditor",  # https://github.com/django-ckeditor/django-ckeditor/
+    "django_countries",  # https://github.com/SmileyChris/django-countries
     "django_extensions",  # https://github.com/django-extensions/django-extensions,
+    "phonenumber_field",  # https://github.com/stefanfoulis/django-phonenumber-field
+    "recurrence",  # https://github.com/jazzband/django-recurrence
+    "solo",  # https://github.com/lazybird/django-solo
 ]
 
 # https://docs.djangoproject.com/en/4.1/ref/settings/#installed-apps
@@ -103,6 +113,9 @@ TEMPLATES = [
     },
 ]
 
+# https://docs.djangoproject.com/en/4.1/ref/settings/#form-renderer
+FORM_RENDERER = "django.forms.renderers.TemplatesSetting"
+
 WSGI_APPLICATION = "mysite.wsgi.application"
 
 # DATABASES
@@ -113,14 +126,14 @@ DATABASES["default"]["ATOMIC_REQUESTS"] = True
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
-DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+DEFAULT_AUTO_FIELD = "django.db.models.AutoField"
 
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
 
 # PASSWORDS
 # ------------------------------------------------------------------------------
-# See https://docs.djangoproject.com/en/4.0/topics/auth/passwords/#using-argon2-with-django
+# See https://docs.djangoproject.com/en/4.1/topics/auth/passwords/#using-argon2-with-django
 PASSWORD_HASHERS = [
     "django.contrib.auth.hashers.Argon2PasswordHasher",
     "django.contrib.auth.hashers.PBKDF2PasswordHasher",
@@ -128,7 +141,7 @@ PASSWORD_HASHERS = [
     "django.contrib.auth.hashers.BCryptSHA256PasswordHasher",
 ]
 # Password validation
-# https://docs.djangoproject.com/en/4.0/ref/settings/#auth-password-validators
+# https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
 AUTH_PASSWORD_VALIDATORS = [
     {
         "NAME": "django.contrib.auth.password_validation.UserAttributeSimilarityValidator",
@@ -200,3 +213,15 @@ EMAIL_TIMEOUT = 5
 # Django Admin URL.
 ADMIN_URL = "django-admin/"
 LIST_OF_EMAIL_RECIPIENTS: List[str] = []
+
+# https://docs.djangoproject.com/en/4.1/ref/contrib/sites/#enabling-the-sites-framework
+SITE_ID = 1
+
+# SETTINGS FOR THIRD PARTY APPS
+# ------------------------------------------------------------------------------
+
+# https://github.com/SmileyChris/django-countries
+COUNTRIES_FIRST = ["ZM"]
+
+# https://github.com/stefanfoulis/django-phonenumber-field
+PHONENUMBER_DEFAULT_REGION = "ZM"
