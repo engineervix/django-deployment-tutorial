@@ -5,6 +5,7 @@
 black
 commitizen
 django-debug-toolbar
+DSLR
 flake8
 invoke
 isort[requirements_deprecated_finder]

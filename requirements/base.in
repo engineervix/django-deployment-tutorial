@@ -3,10 +3,19 @@ django[argon2,bcrypt]
 psycopg2
 
 # Django packages
+django-autoslug
+django-ckeditor
+django-countries
 django-environ
 django-extensions
 django-model-utils
+django-phonenumber-field[phonenumbers]
+django-recurrence
+django-solo
+django-upload-validator
 
 # Other packages
 bpython
+Pillow
+python-magic
 whitenoise

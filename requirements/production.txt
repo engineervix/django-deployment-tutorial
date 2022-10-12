@@ -75,12 +75,29 @@ django[argon2,bcrypt]==4.1.1
     #   -c requirements/base.txt
     #   -r requirements/base.txt
     #   django-anymail
+    #   django-ckeditor
     #   django-extensions
+    #   django-js-asset
     #   django-model-utils
+    #   django-phonenumber-field
+    #   django-recurrence
     #   django-redis
+    #   django-solo
     #   django-storages
 django-anymail[mailgun]==8.6
     # via -r requirements/production.in
+django-autoslug==1.9.8
+    # via
+    #   -c requirements/base.txt
+    #   -r requirements/base.txt
+django-ckeditor==6.5.1
+    # via
+    #   -c requirements/base.txt
+    #   -r requirements/base.txt
+django-countries==7.3.2
+    # via
+    #   -c requirements/base.txt
+    #   -r requirements/base.txt
 django-environ==0.9.0
     # via
     #   -c requirements/base.txt
@@ -89,14 +106,35 @@ django-extensions==3.2.1
     # via
     #   -c requirements/base.txt
     #   -r requirements/base.txt
+django-js-asset==2.0.0
+    # via
+    #   -c requirements/base.txt
+    #   -r requirements/base.txt
+    #   django-ckeditor
 django-model-utils==4.2.0
+    # via
+    #   -c requirements/base.txt
+    #   -r requirements/base.txt
+django-phonenumber-field[phonenumbers]==7.0.0
+    # via
+    #   -c requirements/base.txt
+    #   -r requirements/base.txt
+django-recurrence==1.11.1
     # via
     #   -c requirements/base.txt
     #   -r requirements/base.txt
 django-redis==5.2.0
     # via -r requirements/production.in
+django-solo==2.0.0
+    # via
+    #   -c requirements/base.txt
+    #   -r requirements/base.txt
 django-storages[boto3]==1.13.1
     # via -r requirements/production.in
+django-upload-validator==1.1.6
+    # via
+    #   -c requirements/base.txt
+    #   -r requirements/base.txt
 greenlet==1.1.3
     # via
     #   -c requirements/base.txt
@@ -117,6 +155,15 @@ jmespath==1.0.1
     #   botocore
 packaging==21.3
     # via redis
+phonenumbers==8.12.56
+    # via
+    #   -c requirements/base.txt
+    #   -r requirements/base.txt
+    #   django-phonenumber-field
+pillow==9.2.0
+    # via
+    #   -c requirements/base.txt
+    #   -r requirements/base.txt
 psycopg2==2.9.3
     # via
     #   -c requirements/base.txt
@@ -134,7 +181,16 @@ pygments==2.13.0
 pyparsing==3.0.9
     # via packaging
 python-dateutil==2.8.2
-    # via botocore
+    # via
+    #   -c requirements/base.txt
+    #   -r requirements/base.txt
+    #   botocore
+    #   django-recurrence
+python-magic==0.4.27
+    # via
+    #   -c requirements/base.txt
+    #   -r requirements/base.txt
+    #   django-upload-validator
 pyxdg==0.28
     # via
     #   -c requirements/base.txt
@@ -165,6 +221,11 @@ sqlparse==0.4.2
     #   -c requirements/base.txt
     #   -r requirements/base.txt
     #   django
+typing-extensions==4.3.0
+    # via
+    #   -c requirements/base.txt
+    #   -r requirements/base.txt
+    #   django-countries
 urllib3==1.26.12
     # via
     #   -c requirements/base.txt
