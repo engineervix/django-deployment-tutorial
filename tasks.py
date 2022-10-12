@@ -176,7 +176,7 @@ def bump(c, branch):
     uncommitted_str = "to be committed"
     check = c.run("git status", pty=True)
     if unstaged_str not in check.stdout or uncommitted_str not in check.stdout:
-        execute_bump_hack(c)
+        execute_bump_hack(c, branch)
     else:
         print(f"{Fore.RED}Sorry mate, please ensure there are no pending git operations{Fore.RESET}")
 
