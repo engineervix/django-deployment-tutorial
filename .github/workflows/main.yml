@@ -129,7 +129,7 @@ jobs:
           ln -fs /usr/share/zoneinfo/Africa/Lusaka /etc/localtime
           dpkg-reconfigure --frontend noninteractive tzdata
           apt-get update -y
-          apt-get install -y build-essential curl libpq-dev postgresql-client libjpeg62-turbo-dev zlib1g-dev libwebp-dev
+          apt-get install -y build-essential curl libpq-dev postgresql-client libjpeg62-turbo-dev zlib1g-dev libwebp-dev libmagic1
           export PGPASSWORD=$POSTGRES_PASSWORD
           export PGUSER=$POSTGRES_USER
           python -VV # Print out python version for debugging
