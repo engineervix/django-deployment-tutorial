@@ -26,7 +26,12 @@ exclude = '''
 
 [tool.isort]
 profile = "black"
-known_third_party = ["colorama", "django", "environ", "factory", "invoke", "model_utils", "pytest", "sentry_sdk", "storages", "tomli"]
+skip = ["node_modules", ".git", "__pycache__", "LC_MESSAGES", "venv", ".venv"]
+blocked_extensions = ["rst", "html", "js", "svg", "txt", "css", "scss", "png", "snap", "ts", "tsx"]
+known_first_party = "mysite"
+known_django = "django"
+sections = ["FUTURE", "STDLIB", "DJANGO", "THIRDPARTY", "FIRSTPARTY", "LOCALFOLDER"]
+default_section = "THIRDPARTY"
 
 [tool.commitizen]
 version = "0.0.0"

@@ -10,7 +10,8 @@ from invoke import task
 def dev(c):
     """run the Django development server"""
     # TODO: https://stackoverflow.com/questions/72166259/werkzeug-server-is-shutting-down-in-django-application
-    c.run("python manage.py runserver_plus --keep-meta-shutdown 0.0.0.0:8000", pty=True)
+    # c.run("python manage.py runserver_plus --keep-meta-shutdown 0.0.0.0:8000", pty=True)
+    c.run("python manage.py runserver 0.0.0.0:8000", pty=True)
 
 
 @task
