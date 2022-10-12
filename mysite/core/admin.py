@@ -2,7 +2,16 @@ from django.contrib import admin
 
 from solo.admin import SingletonModelAdmin
 
-from mysite.core.models import WeeklyActivity, Belief, OnlinePlatforms, Vision, Mission, Location, HomePage, AboutPage
+from mysite.core.models import (
+    AboutPage,
+    Belief,
+    HomePage,
+    Location,
+    Mission,
+    OnlinePlatforms,
+    Vision,
+    WeeklyActivity,
+)
 
 
 class WeeklyActivtyAdmin(admin.ModelAdmin):
