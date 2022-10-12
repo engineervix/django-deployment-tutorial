@@ -1,0 +1,147 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block extrameta %}
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="author" content="John Doe">
+
+    <meta property="og:title" content="MySite" />
+    <meta property="og:type" content="website" />
+    <meta property="og:description" content="">
+    <meta property="og:site_name" content="MySite">
+    <meta property="og:url" content="{{ request.build_absolute_uri }}" />
+    <meta property="og:image" content="https://picsum.photos/id/0/300/200" />
+    <meta property="og:locale" content="en_ZM" />
+    <meta property="og:locale:alternate" content="en_ZA" />
+    <meta property="og:locale:alternate" content="en_GB" />
+    <meta property="og:locale:alternate" content="en_US" />
+{% endblock %}
+
+{% block page_title %}
+{{ home_page.title }}
+{% endblock %}
+
+{% block content %}
+<main>
+
+  <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    </div>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="https://source.unsplash.com/xC7Ho08RYF4/960x540" class="carousel-img d-block w-100 h-100" alt="Image 1">
+
+        <div class="container">
+          <div class="carousel-caption text-start">
+            <h1>Example headline.</h1>
+            <p>Some representative placeholder content for the first slide of the carousel.</p>
+            <p><a class="btn btn-lg btn-primary" href="#">Sign up today</a></p>
+          </div>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="https://source.unsplash.com/rJnepi_DMsA/960x540" class="carousel-img d-block w-100 h-100" alt="Image 2">
+
+        <div class="container">
+          <div class="carousel-caption">
+            <h1>Another example headline.</h1>
+            <p>Some representative placeholder content for the second slide of the carousel.</p>
+            <p><a class="btn btn-lg btn-primary" href="#">Learn more</a></p>
+          </div>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="https://source.unsplash.com/W10XfpqLu4Y/960x540" class="carousel-img d-block w-100 h-100" alt="Image 3">
+
+        <div class="container">
+          <div class="carousel-caption text-end">
+            <h1>One more for good measure.</h1>
+            <p>Some representative placeholder content for the third slide of this carousel.</p>
+            <p><a class="btn btn-lg btn-primary" href="#">Browse gallery</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+
+  <section class="pb-5 border-bottom">
+    <div class="container px-5 my-2">
+      {% if not home_page.welcome_message %}
+        <div class="row pb-3">
+            <div class="col">
+              <div class="alert alert-primary d-flex align-items-center" role="alert">
+                  <i class="fas fa-info-circle fa-2x me-2"></i>
+                  <div>{{ home_page.welcome_message|safe }}</div>
+              </div>
+            </div>
+        </div>
+      {% else %}
+        <div class="row justify-content-center">
+          <div class="col-md-8">
+              <div class="alert alert-danger text-center" role="alert">
+                <p class="lead">Well, looks like we don't have any meaningful content right now 🤷</p>
+              </div>
+              <lottie-player
+                autoplay
+                loop
+                mode="normal"
+                src="{% static 'img/lottiefiles/pink-rocket-launch.json' %}"
+              >
+              </lottie-player>
+          </div>
+        </div>
+      {% endif %}
+      <div class="row gx-5">
+        <div class="col-lg-4 mb-5 mb-lg-0">
+          <div class="card">
+            <div class="card-header">
+              Something
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">facilis nulla nisi</h5>
+              <p class="card-text">Dolores distinctio ad magni est iusto.</p>
+              <a href="#" class="btn btn-primary">sed esse impedit</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 mb-5 mb-lg-0">
+          <div class="card">
+            <div class="card-header">
+              Another thing
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">dicta id ea</h5>
+              <p class="card-text">Velit vel vel itaque perferendis enim.</p>
+              <a href="#" class="btn btn-primary">perspiciatis</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 mb-5 mb-lg-0">
+          <div class="card">
+            <div class="card-header">
+              Another one right here
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">sapiente laboriosam magni</h5>
+              <p class="card-text">Esse et debitis maiores iste fugit earum.</p>
+              <a href="#" class="btn btn-primary">magni</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+{% endblock content %}

@@ -1,0 +1,70 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block extrameta %}
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="author" content="John Doe">
+
+    <meta property="og:title" content="MySite" />
+    <meta property="og:type" content="website" />
+    <meta property="og:description" content="">
+    <meta property="og:site_name" content="MySite">
+    <meta property="og:url" content="{{ request.build_absolute_uri }}" />
+    <meta property="og:image" content="https://picsum.photos/id/1/300/200" />
+    <meta property="og:locale" content="en_ZM" />
+    <meta property="og:locale:alternate" content="en_ZA" />
+    <meta property="og:locale:alternate" content="en_GB" />
+    <meta property="og:locale:alternate" content="en_US" />
+{% endblock %}
+
+{% block page_title %}
+{{ about_page.title }}
+{% endblock %}
+
+{% block content %}
+<main>
+  <section class="py-5 border-bottom">
+    <div class="container px-5 my-5">
+      <div class="row gx-5">
+        <div class="col-lg-4 mb-5 mb-lg-0">
+          <div class="card">
+            <div class="card-header">
+              <i class="fas fa-wrench me-2"></i> Something
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">facilis nulla nisi</h5>
+              <p class="card-text">Dolores distinctio ad magni est iusto.</p>
+              <a href="#" class="btn btn-primary">sed esse impedit</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 mb-5 mb-lg-0">
+          <div class="card">
+            <div class="card-header">
+              <i class="fas fa-warehouse me-2"></i> Another thing
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">dicta id ea</h5>
+              <p class="card-text">Velit vel vel itaque perferendis enim.</p>
+              <a href="#" class="btn btn-warning">perspiciatis</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 mb-5 mb-lg-0">
+          <div class="card">
+            <div class="card-header">
+              <i class="fas fa-tree me-2"></i> Another one right here
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">sapiente laboriosam magni</h5>
+              <p class="card-text">Esse et debitis maiores iste fugit earum.</p>
+              <a href="#" class="btn btn-danger">magni</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+{% endblock content %}
