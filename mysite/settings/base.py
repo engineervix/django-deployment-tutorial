@@ -27,8 +27,12 @@ env = environ.Env(
     BASE_URL=str,
 )
 
-# Take environment variables from .env file
-environ.Env.read_env(os.path.join(ROOT_DIR, ".env"))
+if os.environ["DJANGO_SETTINGS_MODULE"] in [
+    "mysite.settings.dev",
+    "mysite.settings.test",
+]:
+    # Take environment variables from .env file
+    environ.Env.read_env(os.path.join(ROOT_DIR, ".env"))
 
 # GENERAL
 # ------------------------------------------------------------------------------
@@ -116,7 +120,13 @@ TEMPLATES = [
 # https://docs.djangoproject.com/en/4.1/ref/settings/#form-renderer
 FORM_RENDERER = "django.forms.renderers.TemplatesSetting"
 
-WSGI_APPLICATION = "mysite.wsgi.application"
+if os.environ["DJANGO_SETTINGS_MODULE"] in [
+    "mysite.settings.dev",
+    "mysite.settings.test",
+]:
+    WSGI_APPLICATION = "mysite.wsgi.application"
+else:
+    WSGI_APPLICATION = "mysite.wsgi_production.application"
 
 # DATABASES
 # ------------------------------------------------------------------------------
