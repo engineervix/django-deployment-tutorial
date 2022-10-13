@@ -4,6 +4,30 @@ All notable changes to this project will be documented here.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project attempts to adhere to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [v0.2.0](https://github.com/engineervix/django-deployment-tutorial/compare/v0.1.0...v0.2.0) (2022-10-13)
+
+
+### ⚙️ Build System
+
+* add app.json & specify python version for deployment ([f58cabe](https://github.com/engineervix/django-deployment-tutorial/commit/f58cabe27c848dfcacb2b6f83076d1c5382655f1))
+* add Dokku post compilation script ([0f9694f](https://github.com/engineervix/django-deployment-tutorial/commit/0f9694f316961240a088881e5c49dc8e79734ee7))
+* add Procfile for production deployment ([08d2ac3](https://github.com/engineervix/django-deployment-tutorial/commit/08d2ac3e66e1b4b22b81e2c9a9d1e2d94a05d162))
+
+
+### 🚀 Features
+
+* update project setup in readiness for production deployment ([a234740](https://github.com/engineervix/django-deployment-tutorial/commit/a234740f3e09e643b597f49d8dbf3271d390df4b))
+
+
+### 📝 Docs
+
+* add deployment instructions ([5e34a6a](https://github.com/engineervix/django-deployment-tutorial/commit/5e34a6ace1d002ba0c1f12fb037ef7dced92804f))
+
+
+### 🐛 Bug Fixes
+
+* correct the condition for showing placeholder content on homepage template ([e5c7ead](https://github.com/engineervix/django-deployment-tutorial/commit/e5c7eadd17debd141e0f335843d76b2fc4a66ae6))
+
 ## [v0.1.0](https://github.com/engineervix/django-deployment-tutorial/compare/v0.0.0...v0.1.0) (2022-10-12)
 
 

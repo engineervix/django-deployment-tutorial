@@ -34,7 +34,7 @@ sections = ["FUTURE", "STDLIB", "DJANGO", "THIRDPARTY", "FIRSTPARTY", "LOCALFOLD
 default_section = "THIRDPARTY"
 
 [tool.commitizen]
-version = "0.1.0"
+version = "0.2.0"
 version_files = [
     # "package.json",
     "mysite/__init__.py",
