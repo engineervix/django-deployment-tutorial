@@ -81,7 +81,7 @@ jobs:
 
     services:
       redis:
-        image: redis:7.0.5
+        image: redis:7.0.10
       postgres:
         image: postgres:14.5
         env:
