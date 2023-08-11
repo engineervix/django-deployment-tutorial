@@ -21,7 +21,7 @@ jobs:
   # runs all of the steps inside the specified container rather than on the VM host.
   # Because of this the network configuration changes from host based network to a container network.
   linter_isort:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
     container: python:3.10-slim-bullseye
 
     steps:
@@ -39,7 +39,7 @@ jobs:
   # runs all of the steps inside the specified container rather than on the VM host.
   # Because of this the network configuration changes from host based network to a container network.
   linter_black:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
     container: python:3.10-slim-bullseye
 
     steps:
@@ -57,7 +57,7 @@ jobs:
   # runs all of the steps inside the specified container rather than on the VM host.
   # Because of this the network configuration changes from host based network to a container network.
   linter_flake8:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
     container: python:3.10-slim-bullseye
 
     steps:
@@ -75,7 +75,7 @@ jobs:
   # runs all of the steps inside the specified container rather than on the VM host.
   # Because of this the network configuration changes from host based network to a container network.
   pytest:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
     needs: [linter_isort,linter_black,linter_flake8]
     container: python:3.10-slim-bullseye
 
@@ -185,7 +185,7 @@ jobs:
 
     if: needs.pytest.result == 'success' && startsWith( github.ref, 'refs/tags/v' )
 
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
 
     steps:
       - name: Check out the repo
