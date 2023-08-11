@@ -83,7 +83,7 @@ jobs:
       redis:
         image: redis:7.0.12
       postgres:
-        image: postgres:14.5
+        image: postgres:15.4
         env:
           POSTGRES_DB: test_postgres_db
           POSTGRES_USER: test_postgres_user
