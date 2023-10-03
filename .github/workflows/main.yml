@@ -22,7 +22,7 @@ jobs:
   # Because of this the network configuration changes from host based network to a container network.
   linter_isort:
     runs-on: ubuntu-20.04
-    container: python:3.10-slim-bullseye
+    container: python:3.12-slim-bullseye
 
     steps:
       - name: Checkout Code Repository
@@ -40,7 +40,7 @@ jobs:
   # Because of this the network configuration changes from host based network to a container network.
   linter_black:
     runs-on: ubuntu-20.04
-    container: python:3.10-slim-bullseye
+    container: python:3.12-slim-bullseye
 
     steps:
       - name: Checkout Code Repository
@@ -58,7 +58,7 @@ jobs:
   # Because of this the network configuration changes from host based network to a container network.
   linter_flake8:
     runs-on: ubuntu-20.04
-    container: python:3.10-slim-bullseye
+    container: python:3.12-slim-bullseye
 
     steps:
       - name: Checkout Code Repository
@@ -77,7 +77,7 @@ jobs:
   pytest:
     runs-on: ubuntu-20.04
     needs: [linter_isort,linter_black,linter_flake8]
-    container: python:3.10-slim-bullseye
+    container: python:3.12-slim-bullseye
 
     services:
       redis:
